@@ -1,0 +1,17 @@
+<td-layout #layout>
+    <td-navigation-drawer navigationRoute="/home" sidenavTitle="Menu" name="Firstname Lastname"
+        logo="icons:bookshelf" color="accent" email="firstname.lastname@bosch.com">
+        <md-nav-list>
+            <a md-list-item [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="layout.close()">
+                <md-icon>home</md-icon>Home
+            </a>
+            <a md-list-item [routerLink]="['/collection']" routerLinkActive="router-link-active" (click)="layout.close()">
+                <md-icon>bookmark_border</md-icon>My Collection
+            </a>
+            <a md-list-item [routerLink]="['/search']" routerLinkActive="router-link-active" (click)="layout.close()">
+                <md-icon>search</md-icon>Search books
+            </a>
+        </md-nav-list>
+    </td-navigation-drawer>
+    <router-outlet></router-outlet>
+</td-layout>
