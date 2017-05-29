@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'ws-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ws works!';
+  constructor(
+    private _title: Title
+  ) {
+    this._title.setTitle('Angular Workshop -  Book Store');
+  }
 }
