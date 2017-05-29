@@ -1,8 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {
+    LayoutPageComponent, MainPageComponent,
+} from './containers';
 
-const routes: Routes[] = [
+const routes: Routes = [
+    {
+        path: '',
+        component: MainPageComponent,
+        children: [
+            {
+                path: '',
+                component: LayoutPageComponent,
+                children: [
 
+                ]
+            }
+        ]
+    }
 ];
 
 @NgModule({
@@ -14,5 +29,5 @@ const routes: Routes[] = [
 export class AppRoutingModule { }
 
 export const routedComponents = [
-
+    LayoutPageComponent, MainPageComponent,
 ];
