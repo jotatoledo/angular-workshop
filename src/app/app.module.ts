@@ -1,4 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -13,6 +14,8 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { BookService } from './services';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,10 +25,12 @@ import 'rxjs/add/operator/map';
     SharedModule,
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule
   ],
   providers: [
+    BookService,
     Title
   ],
   bootstrap: [AppComponent]
