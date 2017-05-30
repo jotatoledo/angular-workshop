@@ -13,6 +13,6 @@ export class BookCollectionPageComponent {
   constructor(
     private _bookService: BookService
   ) {
-    this.books$ = Observable.of([]);
+    this.books$ = this._bookService.getCollection();
   }
 }
