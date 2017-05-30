@@ -10,7 +10,11 @@
   </md-card-header>
   <md-divider></md-divider>
   <md-card-content>
-    <p *ngIf="description" md-scroll-y>{{ description }}</p>
+    <h3>Description</h3>
+    <p *ngIf="description; else elseBlock">{{ description | elipsis: 300 }}</p>
+    <ng-template #elseBlock>
+      <p>No description available</p>
+    </ng-template>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-footer>
