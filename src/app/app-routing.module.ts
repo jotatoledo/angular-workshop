@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
-    LayoutPageComponent, MainPageComponent,
+    LayoutPageComponent, MainPageComponent, FindBookPageComponent,
 } from './containers';
 
 const routes: Routes = [
@@ -13,7 +13,20 @@ const routes: Routes = [
                 path: '',
                 component: LayoutPageComponent,
                 children: [
-
+                    {
+                        path: 'find',
+                        component: FindBookPageComponent
+                    },
+                    {
+                        path: '',
+                        redirectTo: 'find',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: '**',
+                        redirectTo: 'find',
+                        pathMatch: 'full'
+                    }
                 ]
             }
         ]
@@ -29,5 +42,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routedComponents = [
-    LayoutPageComponent, MainPageComponent,
+    LayoutPageComponent, MainPageComponent, FindBookPageComponent,
 ];
