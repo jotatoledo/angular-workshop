@@ -15,12 +15,12 @@ const routes: Routes = [
                 component: LayoutPageComponent,
                 children: [
                     {
-                        path: 'find',
+                        path: 'books',
                         component: FindBookPageComponent
                     },
                     {
                         path: '',
-                        redirectTo: 'find',
+                        redirectTo: 'books',
                         pathMatch: 'full'
                     },
                     {
