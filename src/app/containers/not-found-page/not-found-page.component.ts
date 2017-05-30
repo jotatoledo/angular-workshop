@@ -11,7 +11,7 @@ export class NotFoundPageComponent {
     private _location: Location
   ) { }
 
-  goBack(){
+  goBack() {
     this._location.back();
   }
 }

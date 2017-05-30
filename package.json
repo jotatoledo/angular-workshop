@@ -10,7 +10,15 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jotatoledo/angular-workshop.git"
+  },
+  "author": {
+    "email": "jotatoledon@gmail.com",
+    "name": "Jose Toledo Navarro",
+    "url": "https://github.com/jotatoledo"
+  },
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
