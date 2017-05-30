@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
     LayoutPageComponent, MainPageComponent, FindBookPageComponent,
+    NotFoundPageComponent,
 } from './containers';
 
 const routes: Routes = [
@@ -23,8 +24,12 @@ const routes: Routes = [
                         pathMatch: 'full'
                     },
                     {
+                        path: '404',
+                        component: NotFoundPageComponent
+                    },
+                    {
                         path: '**',
-                        redirectTo: 'find',
+                        redirectTo: '404',
                         pathMatch: 'full'
                     }
                 ]
@@ -43,4 +48,5 @@ export class AppRoutingModule { }
 
 export const routedComponents = [
     LayoutPageComponent, MainPageComponent, FindBookPageComponent,
+    NotFoundPageComponent,
 ];
