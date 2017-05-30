@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
     LayoutPageComponent, MainPageComponent, FindBookPageComponent,
-    NotFoundPageComponent,
+    NotFoundPageComponent, BookDetailsPageComponent,
 } from './containers';
 
 const routes: Routes = [
@@ -16,7 +16,30 @@ const routes: Routes = [
                 children: [
                     {
                         path: 'books',
-                        component: FindBookPageComponent
+                        children: [
+                            {
+                                path: 'find',
+                                children: [
+                                    {
+                                        path: '',
+                                        component: FindBookPageComponent
+                                    },
+                                    {
+                                        path: ':id',
+                                        component: BookDetailsPageComponent
+                                    }
+                                ]
+                            },
+                            {
+                                path: 'collection',
+                                component: NotFoundPageComponent
+                            },
+                            {
+                                path: '',
+                                redirectTo: 'collection',
+                                pathMatch: 'full'
+                            },
+                        ]
                     },
                     {
                         path: '',
@@ -48,5 +71,5 @@ export class AppRoutingModule { }
 
 export const routedComponents = [
     LayoutPageComponent, MainPageComponent, FindBookPageComponent,
-    NotFoundPageComponent,
+    NotFoundPageComponent, BookDetailsPageComponent,
 ];
