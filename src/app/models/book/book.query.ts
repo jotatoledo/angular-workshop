@@ -5,3 +5,9 @@ export interface BookQuery {
     kind: string;
     items: BookPresentation[];
 }
+
+export const DEFAULT_BOOK_QUERY_RESULT: BookQuery = {
+    items: [],
+    kind: null,
+    totalItems: 0
+};
