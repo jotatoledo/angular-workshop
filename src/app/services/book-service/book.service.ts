@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { extractData, handleError } from '../util';
 import { BookQuery, BookDetail } from '../../models';
@@ -16,21 +16,21 @@ export class BookService {
     this._endPoint = 'https://www.googleapis.com/books/v1/volumes';
   }
 
-  queryBooks(filter: string): Observable<BookQuery> {
-    return this._http.get(`${this._endPoint}`, {
-      search: this.queryParams(filter)
-    })
+  queryBooks(filter: string, startIndex = 0, maxResults = 20): Observable<BookQuery> {
+    return this._http.get(`${this._endPoint}`, this.queryParams(filter, startIndex, maxResults))
       .map(extractData)
       .catch(handleError)
       .delay(300);
   }
 
-  private queryParams(filter: string, startIndex = 0, maxResults = 10): URLSearchParams {
+  private queryParams(filter: string, startIndex: number, maxResults: number): RequestOptions {
     const params = new URLSearchParams();
     params.set('q', filter);
-    params.set('startIndex ', startIndex.toString());
-    params.set('maxResults ', maxResults.toString());
-    return params;
+    params.set('startIndex', startIndex.toString());
+    params.set('maxResults', maxResults.toString());
+    return new RequestOptions({
+      params: params
+    });
   }
 
   getBook(id: string): Observable<BookDetail> {
