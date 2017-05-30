@@ -1,16 +1,1 @@
-<md-card>
-  <md-card-content>
-    <p>
-      book-details-page works!
-    </p>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions align="start">
-    <button md-raised-button color="warn" *ngIf="inCollection" (click)="handleRemove()">
-      Remove Book from Collection
-    </button>
-    <button md-raised-button color="primary" *ngIf="!inCollection" (click)="handleAdd()">
-      Add Book to Collection
-    </button>
-  </md-card-actions>
-</md-card>
+<ws-book-details [inCollection]="false" [book]="book$ | async" (add)="handleAdd($event)" (remove)="handleRemove($event)"></ws-book-details>

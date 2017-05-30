@@ -1,4 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { BookService } from '../../services';
 import { BookDetail } from '../../models';
 
 @Component({
@@ -7,16 +10,23 @@ import { BookDetail } from '../../models';
   styleUrls: ['./book-details-page.component.css']
 })
 export class BookDetailsPageComponent {
-  @Input() book: BookDetail;
-  @Input() inCollection: boolean;
-  @Output() add = new EventEmitter<BookDetail>();
-  @Output() remove = new EventEmitter<BookDetail>();
+  book$: Observable<BookDetail>;
+  constructor(
+    private _bookService: BookService,
+    private _route: ActivatedRoute
+  ) {
+    this.book$ = this._bookService.getBook(this.bookId);
+  }
 
-  handleAdd() {
+  private get bookId(){
+    return this._route.snapshot.params['id'];
+  }
+
+  handleAdd(event: string) {
 
   }
 
-  handleRemove() {
+  handleRemove(event: string) {
 
   }
 }
