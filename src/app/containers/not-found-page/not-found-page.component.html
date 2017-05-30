@@ -1,0 +1,14 @@
+<md-card>
+  <md-card-title>404: Not Found</md-card-title>
+  <md-card-content>
+    <p>Hey! It looks like this page doesn't exist yet.</p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button color="accent" (click)="goBack()">
+      <md-icon>undo</md-icon> Back to last page!
+    </button>
+    <a md-raised-button color="primary" [routerLink]="['/']">
+      <md-icon>home</md-icon> Take me home!
+    </a>
+  </md-card-actions>
+</md-card>
