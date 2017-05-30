@@ -18,9 +18,10 @@ import { BookService } from './services';
 
 import {
   BookPreviewComponent, BookPreviewListComponent, BookSearchComponent,
-
+  BookDetailsComponent,
 } from './components';
 import { ElipsisPipe } from './pipes/elipsis.pipe';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ElipsisPipe } from './pipes/elipsis.pipe';
     BookPreviewListComponent,
     BookSearchComponent,
     ElipsisPipe,
+    BookDetailsComponent,
   ],
   imports: [
     SharedModule,
