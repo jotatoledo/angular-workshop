@@ -6,7 +6,7 @@ import {
   MdTooltipModule, MdIconModule, MdListModule,
 } from '@angular/material';
 import {
-  CovalentLayoutModule,
+  CovalentLayoutModule, CovalentSearchModule,
 } from '@covalent/core';
 import {
   FlexLayoutModule
@@ -17,7 +17,7 @@ const FLEX_LAYOUT_MODULES = [
 ];
 
 const COVALENT_MODULES = [
-  CovalentLayoutModule,
+  CovalentLayoutModule, CovalentSearchModule,
 ];
 
 const MATERIAL_MODULES = [

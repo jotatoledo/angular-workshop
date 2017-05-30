@@ -16,10 +16,18 @@ import 'rxjs/add/operator/map';
 
 import { BookService } from './services';
 
+import {
+  BookPreviewComponent, BookPreviewListComponent, BookSearchComponent,
+
+} from './components';
+
 @NgModule({
   declarations: [
     AppComponent,
-    routedComponents
+    routedComponents,
+    BookPreviewComponent,
+    BookPreviewListComponent,
+    BookSearchComponent,
   ],
   imports: [
     SharedModule,
