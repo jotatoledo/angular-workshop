@@ -1,1 +1,1 @@
-<ws-book-details [inCollection]="false" [book]="book$ | async" (add)="handleAdd($event)" (remove)="handleRemove($event)"></ws-book-details>
+<ws-book-details [inCollection]="inCollection$ | async" [book]="book$ | async" (add)="handleAdd($event)" (remove)="handleRemove($event)"></ws-book-details>
