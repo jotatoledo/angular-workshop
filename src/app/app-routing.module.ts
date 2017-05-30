@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
     LayoutPageComponent, MainPageComponent, FindBookPageComponent,
-    NotFoundPageComponent, BookDetailsPageComponent,
+    NotFoundPageComponent, BookDetailsPageComponent, BookCollectionPageComponent,
 } from './containers';
 
 const routes: Routes = [
@@ -32,7 +32,16 @@ const routes: Routes = [
                             },
                             {
                                 path: 'collection',
-                                component: NotFoundPageComponent
+                                children: [
+                                    {
+                                        path: '',
+                                        component: BookCollectionPageComponent
+                                    },
+                                    {
+                                        path: ':id',
+                                        component: BookDetailsPageComponent
+                                    }
+                                ]
                             },
                             {
                                 path: '',
@@ -71,5 +80,5 @@ export class AppRoutingModule { }
 
 export const routedComponents = [
     LayoutPageComponent, MainPageComponent, FindBookPageComponent,
-    NotFoundPageComponent, BookDetailsPageComponent,
+    NotFoundPageComponent, BookDetailsPageComponent, BookCollectionPageComponent,
 ];
