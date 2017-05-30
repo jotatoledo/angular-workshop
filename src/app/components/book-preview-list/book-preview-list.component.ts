@@ -8,4 +8,8 @@ import { BookPresentation } from '../../models';
 })
 export class BookPreviewListComponent {
   @Input() books: BookPresentation[];
+
+  get empty(): boolean {
+    return this.books.length === 0;
+  }
 }
