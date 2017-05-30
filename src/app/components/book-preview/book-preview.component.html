@@ -1,0 +1,15 @@
+<md-card [routerLink]="[id]">
+  <md-card-title-group>
+    <img md-card-sm-image *ngIf="thumbnail" [src]="thumbnail" />
+    <md-card-title class="text-truncate">{{ title }}</md-card-title>
+    <md-card-subtitle *ngIf="subtitle" class="text-truncate">{{ subtitle }}</md-card-subtitle>
+  </md-card-title-group>
+  <md-divider></md-divider>
+  <md-card-content >
+    <p *ngIf="description" md-scroll-y>{{ description }}</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-footer>
+    <!--<bc-book-authors [book]="book"></bc-book-authors>-->
+  </md-card-footer>
+</md-card>
