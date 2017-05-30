@@ -20,6 +20,7 @@ import {
   BookPreviewComponent, BookPreviewListComponent, BookSearchComponent,
 
 } from './components';
+import { ElipsisPipe } from './pipes/elipsis.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {
     BookPreviewComponent,
     BookPreviewListComponent,
     BookSearchComponent,
+    ElipsisPipe,
   ],
   imports: [
     SharedModule,
