@@ -9,11 +9,11 @@ import { BookDetail } from '../../models';
 export class BookDetailsComponent {
   @Input() book: BookDetail;
   @Input() inCollection: boolean;
-  @Output() add = new EventEmitter<string>();
+  @Output() add = new EventEmitter<BookDetail>();
   @Output() remove = new EventEmitter<string>();
 
   handleAdd() {
-    this.add.emit(this.id);
+    this.add.emit(this.book);
   }
 
   handleRemove() {
