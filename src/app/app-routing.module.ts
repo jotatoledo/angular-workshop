@@ -1,70 +1,64 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
-    LayoutPageComponent, MainPageComponent, FindBookPageComponent,
+    LayoutPageComponent, FindBookPageComponent,
     NotFoundPageComponent, BookDetailsPageComponent, BookCollectionPageComponent,
 } from './containers';
 
 const routes: Routes = [
     {
         path: '',
-        component: MainPageComponent,
+        component: LayoutPageComponent,
         children: [
             {
-                path: '',
-                component: LayoutPageComponent,
+                path: 'books',
                 children: [
                     {
-                        path: 'books',
+                        path: 'find',
                         children: [
                             {
-                                path: 'find',
-                                children: [
-                                    {
-                                        path: '',
-                                        component: FindBookPageComponent
-                                    },
-                                    {
-                                        path: ':id',
-                                        component: BookDetailsPageComponent
-                                    }
-                                ]
+                                path: '',
+                                component: FindBookPageComponent
                             },
                             {
-                                path: 'collection',
-                                children: [
-                                    {
-                                        path: '',
-                                        component: BookCollectionPageComponent
-                                    },
-                                    {
-                                        path: ':id',
-                                        component: BookDetailsPageComponent
-                                    }
-                                ]
-                            },
+                                path: ':id',
+                                component: BookDetailsPageComponent
+                            }
+                        ]
+                    },
+                    {
+                        path: 'collection',
+                        children: [
                             {
                                 path: '',
-                                redirectTo: 'collection',
-                                pathMatch: 'full'
+                                component: BookCollectionPageComponent
                             },
+                            {
+                                path: ':id',
+                                component: BookDetailsPageComponent
+                            }
                         ]
                     },
                     {
                         path: '',
-                        redirectTo: 'books',
+                        redirectTo: 'collection',
                         pathMatch: 'full'
                     },
-                    {
-                        path: '404',
-                        component: NotFoundPageComponent
-                    },
-                    {
-                        path: '**',
-                        redirectTo: '404',
-                        pathMatch: 'full'
-                    }
                 ]
+            },
+            {
+                path: '',
+                redirectTo: 'books',
+                pathMatch: 'full'
+            },
+            {
+                path: '404',
+                component: NotFoundPageComponent
+            },
+            {
+                path: '**',
+                redirectTo: '404',
+                pathMatch: 'full'
             }
         ]
     }
@@ -79,6 +73,6 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routedComponents = [
-    LayoutPageComponent, MainPageComponent, FindBookPageComponent,
+    LayoutPageComponent, FindBookPageComponent,
     NotFoundPageComponent, BookDetailsPageComponent, BookCollectionPageComponent,
 ];
