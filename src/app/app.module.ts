@@ -20,7 +20,7 @@ import {
   BookPreviewComponent, BookPreviewListComponent, BookSearchComponent,
   BookDetailsComponent, EmptyCollectionComponent,
 } from './components';
-import { ElipsisPipe } from './pipes/elipsis.pipe';
+import { ElipsisPipe } from './pipes';
 
 
 @NgModule({
