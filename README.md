@@ -1,6 +1,7 @@
 # Workshop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
+The presentation used for this project as an introduction can be found [here](https://prezi.com/p/dmff_57wgspq/)
 
 ## Development server
 
