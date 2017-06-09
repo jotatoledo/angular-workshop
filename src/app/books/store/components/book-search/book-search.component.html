@@ -1,8 +1,9 @@
-<md-card>
-  <md-card-title>Find a Book</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
+<md-toolbar fxLayout="colum" fxLayoutAlign="center center">
+  <div fxFill fxLayout="row" fxLayoutAlign="center center">
+    <p>Search books</p>
+  </div>
+  <md-toolbar-row>
     <td-search-box [alwaysVisible]="true" placeholder="Search here" [showUnderline]="true" [debounce]="500" (searchDebounce)="handleSearch($event)">
     </td-search-box>
-  </md-card-content>
-</md-card>
+  </md-toolbar-row>
+</md-toolbar>
