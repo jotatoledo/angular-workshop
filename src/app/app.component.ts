@@ -19,6 +19,8 @@ export class AppComponent {
   }
 
   private registerIcons() {
+    this._iconRegistry.addSvgIconInNamespace('icons', 'heart',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/heart.svg'));
     this._iconRegistry.addSvgIconInNamespace('icons', 'github',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
     this._iconRegistry.addSvgIconInNamespace('icons', 'bookshelf',
