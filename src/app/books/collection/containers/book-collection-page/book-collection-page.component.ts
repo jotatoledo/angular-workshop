@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { BookService } from '../../services';
-import { BookPresentation } from '../../models';
+import { BookService } from 'app/services';
+import { BookPresentation } from 'app/models';
 
 @Component({
   selector: 'ws-book-collection-page',

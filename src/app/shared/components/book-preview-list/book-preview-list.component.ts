@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
-import { BookPresentation } from '../../models';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { BookPresentation } from 'app/models';
 
 @Component({
   selector: 'ws-book-preview-list',
   templateUrl: './book-preview-list.component.html',
-  styleUrls: ['./book-preview-list.component.css']
+  styleUrls: ['./book-preview-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookPreviewListComponent {
   @Input() books: BookPresentation[];

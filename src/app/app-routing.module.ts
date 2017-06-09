@@ -1,72 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {
-    LayoutPageComponent, MainPageComponent, FindBookPageComponent,
-    NotFoundPageComponent, BookDetailsPageComponent, BookCollectionPageComponent,
-} from './containers';
+
+import { NotFoundPageComponent } from './shared';
 
 const routes: Routes = [
     {
         path: '',
-        component: MainPageComponent,
-        children: [
-            {
-                path: '',
-                component: LayoutPageComponent,
-                children: [
-                    {
-                        path: 'books',
-                        children: [
-                            {
-                                path: 'find',
-                                children: [
-                                    {
-                                        path: '',
-                                        component: FindBookPageComponent
-                                    },
-                                    {
-                                        path: ':id',
-                                        component: BookDetailsPageComponent
-                                    }
-                                ]
-                            },
-                            {
-                                path: 'collection',
-                                children: [
-                                    {
-                                        path: '',
-                                        component: BookCollectionPageComponent
-                                    },
-                                    {
-                                        path: ':id',
-                                        component: BookDetailsPageComponent
-                                    }
-                                ]
-                            },
-                            {
-                                path: '',
-                                redirectTo: 'collection',
-                                pathMatch: 'full'
-                            },
-                        ]
-                    },
-                    {
-                        path: '',
-                        redirectTo: 'books',
-                        pathMatch: 'full'
-                    },
-                    {
-                        path: '404',
-                        component: NotFoundPageComponent
-                    },
-                    {
-                        path: '**',
-                        redirectTo: '404',
-                        pathMatch: 'full'
-                    }
-                ]
-            }
-        ]
+        redirectTo: 'books',
+        pathMatch: 'full'
+    },
+    {
+        path: 'books',
+        loadChildren: './books/books.module#BooksModule'
+    },
+    {
+        path: '404',
+        component: NotFoundPageComponent
+    },
+    {
+        path: '**',
+        redirectTo: '404',
+        pathMatch: 'full'
     }
 ];
 
@@ -77,8 +31,3 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-export const routedComponents = [
-    LayoutPageComponent, MainPageComponent, FindBookPageComponent,
-    NotFoundPageComponent, BookDetailsPageComponent, BookCollectionPageComponent,
-];

@@ -1,8 +1,8 @@
 import { Component, Input, isDevMode } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { BookService } from '../../services';
-import { BookDetail } from '../../models';
+import { BookService } from 'app/services';
+import { BookDetail } from 'app/models';
 
 @Component({
   selector: 'ws-book-details-page',

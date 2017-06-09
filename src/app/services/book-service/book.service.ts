@@ -3,7 +3,7 @@ import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { extractData, handleError } from '../util';
-import { BookQuery, BookDetail, BookPresentation } from '../../models';
+import { BookQuery, BookDetail, BookPresentation } from 'app/models';
 
 /**
  * API specification: https://developers.google.com/books/docs/v1/using

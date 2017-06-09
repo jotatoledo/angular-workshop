@@ -1,6 +1,6 @@
 import { Component, isDevMode } from '@angular/core';
-import { BookService } from '../../services';
-import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from '../../models';
+import { BookService } from 'app/services';
+import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
 
 @Component({
   selector: 'ws-find-book-page',
