@@ -6,23 +6,10 @@ import { BookDetailsPageComponent, NotFoundPageComponent } from 'app/shared';
 import { BookCollectionPageComponent } from './containers';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: BookCollectionPageComponent
-  },
-  {
-    path: ':id',
-    component: BookDetailsPageComponent
-  },
-  {
-    path: '404',
-    component: NotFoundPageComponent
-  },
-  {
-    path: '**',
-    redirectTo: '404',
-    pathMatch: 'full'
-  }
+  { path: '', component: BookCollectionPageComponent },
+  { path: ':id', component: BookDetailsPageComponent },
+  { path: '404', component: NotFoundPageComponent },
+  { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
 
 @NgModule({

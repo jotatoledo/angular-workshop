@@ -6,22 +6,11 @@ import {
 
 const routes: Routes = [
   {
-    path: '',
-    component: LayoutPageComponent,
+    path: '', component: LayoutPageComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'collection',
-        pathMatch: 'full'
-      },
-      {
-        path: 'store',
-        loadChildren: './store/store.module#StoreModule'
-      },
-      {
-        path: 'collection',
-        loadChildren: './collection/collection.module#CollectionModule'
-      }
+      { path: '', redirectTo: 'collection', pathMatch: 'full' },
+      { path: 'store', loadChildren: './store/store.module#StoreModule' },
+      { path: 'collection', loadChildren: './collection/collection.module#CollectionModule' }
     ]
   }
 ];
