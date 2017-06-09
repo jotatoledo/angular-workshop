@@ -1,0 +1,8 @@
+<md-card>
+  <md-card-title>Find a Book</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-search-box [alwaysVisible]="true" placeholder="Search here" [showUnderline]="true" [debounce]="500" (searchDebounce)="handleSearch($event)">
+    </td-search-box>
+  </md-card-content>
+</md-card>
