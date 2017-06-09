@@ -1,5 +1,5 @@
 {
-  "name": "workshop",
+  "name": "angular-workshop",
   "version": "1.0.2",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,8 @@
     "test": "./node_modules/.bin/ng test",
     "lint": "./node_modules/.bin/ng lint",
     "e2e": "./node_modules/.bin/ng e2e",
-    "ghpages-deploy": "./node_modules/.bin/ng build --base-href /angular-workshop/ -prod -aot && ./node_modules/.bin/ngh" 
+    "ghpages": "./node_modules/.bin/ng build --base-href /angular-workshop/ -prod -aot && ./node_modules/.bin/ngh",
+    "deploy": "./node_modules/.bin/ng build -aot -p"
   },
   "repository": {
     "type": "git",
