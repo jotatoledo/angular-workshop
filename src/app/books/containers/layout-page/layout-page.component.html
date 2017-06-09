@@ -1,6 +1,6 @@
 <td-layout-nav logo="icons:bookshelf" navigationRoute="/">
   <div td-toolbar-content layout="row" layout-align="center center" fxFlex>
-    <span>Book Collection</span>
+    <span>Books Collection</span>
     <span fxFlex></span>
     <a md-icon-button mdTooltip="Github" href="https://github.com/jotatoledo/angular-workshop" target="_blank">
       <md-icon svgIcon="icons:github"></md-icon>
@@ -10,12 +10,14 @@
     <router-outlet></router-outlet>
   </div>
   <td-layout-footer>
-    <div layout="row" layout-align="start center">
-      <span class="md-caption">
-        Angular Workshop - Book Store
-      </span>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span class="md-caption">Angular Workshop - Books Collection</span>
       <span fxFlex></span>
-      <!--<md-icon class="md-icon-ux" svgIcon="assets:bosch_brand_small"></md-icon>-->
+      <div fxLayout="row" fxLayoutAlign="start center">
+          <span class="md-caption">Made with</span>
+          <md-icon class="md-icon-ux push-left-xs push-right-xs" svgIcon="icons:heart"></md-icon>
+          <span class="md-caption">by BueP/ICO</span>
+      </div>
     </div>
   </td-layout-footer>
 </td-layout-nav>
