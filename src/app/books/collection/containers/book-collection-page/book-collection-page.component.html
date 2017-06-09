@@ -1,0 +1,8 @@
+<md-toolbar>
+    <div fxFill fxLayout="row" fxLayoutAlign="center center">
+        <p>My Collection</p>
+    </div>
+</md-toolbar>
+<div fxLayout="column" fxLayoutAlign="center center">
+    <ws-book-preview-list [books]="books$ | async"></ws-book-preview-list>
+</div>
