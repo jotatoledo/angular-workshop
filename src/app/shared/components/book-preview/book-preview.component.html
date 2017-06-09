@@ -1,0 +1,19 @@
+<md-card fxFlex [routerLink]="[id]">
+  <md-card-header>
+    <img md-card-avatar *ngIf="thumbnail" [src]="thumbnail" />
+    <md-card-title class="text-truncate">
+      {{ title | elipsis:35 }}
+    </md-card-title>
+    <md-card-subtitle *ngIf="subtitle" class="text-truncate">
+      {{ subtitle | elipsis:40 }}
+    </md-card-subtitle>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3>Description</h3>
+    <p *ngIf="description; else elseBlock">{{ description | elipsis: 300 }}</p>
+    <ng-template #elseBlock>
+      <p>No description available</p>
+    </ng-template>
+  </md-card-content>
+</md-card>
