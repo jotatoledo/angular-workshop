@@ -1,63 +1,34 @@
-import { Injectable, isDevMode } from '@angular/core';
-import {
-  Router, ActivatedRoute,
-  NavigationEnd, NavigationStart,
-  NavigationError, NavigationCancel
-} from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd, NavigationStart, NavigationError, NavigationCancel } from '@angular/router';
 import { TdLoadingService } from '@covalent/core';
 
 @Injectable()
 export class NavigationService {
+  private id = 'app.loading';
   constructor(
     private _loadingService: TdLoadingService,
     private _router: Router,
-  ) {
-    if (isDevMode()) {
-      console.log('New nav service');
-    }
-  }
+  ) {  }
 
   public startWatching() {
-    this.registerLoadingBarOnNavStart();
-    this.resolveLoadingBarOnNavEnd();
-    this.resolveLoadingBarOnNavCancel();
-    this.resolveLoadingBarOnNavError();
+    this.startLoading();
+    this.resolveLoading();
   }
 
-  private registerLoadingBarOnNavStart() {
+  private startLoading() {
     this._router.events
       .filter(event => event instanceof NavigationStart)
       .subscribe(event => {
-        this._loadingService.register('app.loading');
+        this._loadingService.register(this.id);
       });
   }
 
-  private resolveLoadingBarOnNavCancel() {
+  private resolveLoading() {
     this._router.events
-      .filter(event => event instanceof NavigationCancel)
+      .filter(event => event instanceof NavigationCancel || event instanceof NavigationError || event instanceof NavigationEnd)
       .subscribe(event => {
         setTimeout(() => {
-          this._loadingService.resolve('app.loading');
-        }, 300);
-      });
-  }
-
-  private resolveLoadingBarOnNavError() {
-    this._router.events
-      .filter(event => event instanceof NavigationError)
-      .subscribe(event => {
-        setTimeout(() => {
-          this._loadingService.resolve('app.loading');
-        }, 300);
-      });
-  }
-
-  private resolveLoadingBarOnNavEnd() {
-    this._router.events
-      .filter(event => event instanceof NavigationEnd)
-      .subscribe(event => {
-        setTimeout(() => {
-          this._loadingService.resolve('app.loading');
+          this._loadingService.resolve(this.id);
         }, 300);
       });
   }

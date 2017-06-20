@@ -8,6 +8,7 @@ import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
   styleUrls: ['./find-book-page.component.css']
 })
 export class FindBookPageComponent {
+  loading = true;
   bookQueryResult: BookQuery;
   constructor(
     private _bookService: BookService
@@ -20,11 +21,13 @@ export class FindBookPageComponent {
       console.log('FindBookPageComponent -> handleSearch: ' + event);
     }
     if (!event || !event.length) { // true: the string is empty
+      this.loading = true;
       this.bookQueryResult = Object.assign({}, DEFAULT_BOOK_QUERY_RESULT);
     } else {
-      this._bookService.queryBooks(event).subscribe(
-        data => this.bookQueryResult = data
-      );
+      this.loading = false;
+      this._bookService.queryBooks(event)
+        .finally(() => this.loading = true)
+        .subscribe(data => this.bookQueryResult = data);
     }
   }
 
