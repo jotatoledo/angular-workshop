@@ -3,7 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { BookService } from 'app/books/services';
-import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class BookGuard implements CanActivate {
@@ -14,11 +14,12 @@ export class BookGuard implements CanActivate {
 
   private existBook(id: string): Observable<boolean> {
     return this._bookService.getBook(id)
-      .switchMap(book => {
+      .mergeMap(() => {
         return of(true);
       })
       .catch(error => {
-        this._router.navigate(['/404']);
+        // TODO refactor to navigate to relative path
+        this._router.navigate(['./404']);
         return of(false);
       });
   }
@@ -26,6 +27,6 @@ export class BookGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
-    return this.existBook(next.params['id'])
+    return this.existBook(next.params['id'] )
   }
 }
