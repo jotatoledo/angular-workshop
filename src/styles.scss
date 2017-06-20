@@ -12,11 +12,11 @@
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue.
-$primary: mat-palette($mat-blue, 700);
-$accent: mat-palette($mat-orange, 800, A100, A400);
+// base,default,lighter,darker
+$primary: mat-palette($mat-deep-purple, 500);
+$accent: mat-palette($mat-green, 700, A100, A400);
 // The warn palette is optional (defaults to red).
-$warn: mat-palette($mat-red, 600);
+$warn: mat-palette($mat-red, A700);
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
 
