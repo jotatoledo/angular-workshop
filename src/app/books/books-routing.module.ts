@@ -20,5 +20,4 @@ const routes: Routes = [
 export class BooksRoutingModule { }
 
 export const routedComponents = [
-  
 ];

@@ -1,6 +1,12 @@
 # Angular Workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0. A presentation used for this workshop as an introduction to angular can be found [here](https://prezi.com/p/dmff_57wgspq/)
+A showcase application that uses Google´s books Web API to query information and simulates a "favorites" collection.
+
+Take a look at the live demo [here](https://jotatoledo.github.io/angular-workshop/) 
+
+The presentation used for this workshop as an introduction to angular can be found [here](https://prezi.com/p/dmff_57wgspq/)
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0. 
 
 ---
 
