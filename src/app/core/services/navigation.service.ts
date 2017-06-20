@@ -38,7 +38,7 @@ export class NavigationService {
       .subscribe(event => {
         setTimeout(() => {
           this._loadingService.resolve('app.loading');
-        }, 500);
+        }, 300);
       });
   }
 
@@ -48,7 +48,7 @@ export class NavigationService {
       .subscribe(event => {
         setTimeout(() => {
           this._loadingService.resolve('app.loading');
-        }, 500);
+        }, 300);
       });
   }
 
@@ -58,7 +58,7 @@ export class NavigationService {
       .subscribe(event => {
         setTimeout(() => {
           this._loadingService.resolve('app.loading');
-        }, 500);
+        }, 300);
       });
   }
 }
