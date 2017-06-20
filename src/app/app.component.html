@@ -4,6 +4,11 @@
     <td-navigation-drawer navigationRoute="/" sidenavTitle="Book Collection" name="Firstname Lastname" logo="icons:bookshelf"
         email="firstname.lastname@bosch.com">
         <md-nav-list>
+            <a md-list-item [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="['active']" (click)="layout.close()">
+                <md-icon md-list-avatar>home</md-icon>
+                <h3 md-line>Home</h3>
+                <p md-line class="secondary">Landing page</p>
+            </a>
             <a md-list-item [routerLink]="['/books/collection']" [routerLinkActive]="['active']" (click)="layout.close()">
                 <md-icon md-list-avatar>book</md-icon>
                 <h3 md-line>My Collection</h3>
