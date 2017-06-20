@@ -1,5 +1,5 @@
 import { Component, isDevMode } from '@angular/core';
-import { BookService } from 'app/services';
+import { BookService } from 'app/books/services';
 import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
 
 @Component({
