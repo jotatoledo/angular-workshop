@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,15 +15,13 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { BookService } from './services';
-
-
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
     SharedModule,
+    CoreModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -30,7 +29,6 @@ import { BookService } from './services';
     HttpModule
   ],
   providers: [
-    BookService,
     Title
   ],
   bootstrap: [AppComponent]
