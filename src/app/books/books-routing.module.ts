@@ -9,8 +9,8 @@ const routes: Routes = [
     path: '', component: LayoutPageComponent,
     children: [
       { path: '', redirectTo: 'collection', pathMatch: 'full' },
-      { path: 'store', loadChildren: './store/store.module#StoreModule' },
-      { path: 'collection', loadChildren: './collection/collection.module#CollectionModule' }
+      { path: 'store', loadChildren: 'app/store/store.module#StoreModule' },
+      { path: 'collection', loadChildren: 'app/collection/collection.module#CollectionModule' }
     ]
   }
 ];
