@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import {
   Router, ActivatedRoute,
   NavigationEnd, NavigationStart,
@@ -12,7 +12,9 @@ export class NavigationService {
     private _loadingService: TdLoadingService,
     private _router: Router,
   ) {
-    console.log('New nav service');
+    if (isDevMode()) {
+      console.log('New nav service');
+    }
   }
 
   public startWatching() {
