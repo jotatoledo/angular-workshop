@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {
-  LayoutPageComponent
-} from './containers';
+import { LayoutPageComponent } from 'app/shared/containers';
 
 const routes: Routes = [
   {
@@ -22,5 +20,5 @@ const routes: Routes = [
 export class BooksRoutingModule { }
 
 export const routedComponents = [
-  LayoutPageComponent
+  
 ];
