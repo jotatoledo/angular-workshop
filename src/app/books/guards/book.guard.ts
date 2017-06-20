@@ -27,6 +27,6 @@ export class BookGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
-    return this.existBook(next.params['id'] )
+    return this.existBook(next.params['id']);
   }
 }
