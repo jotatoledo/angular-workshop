@@ -1,7 +1,7 @@
 import { Component, Input, isDevMode } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { BookService } from 'app/services';
+import { BookService } from 'app/books/services';
 import { BookDetail } from 'app/models';
 
 @Component({
