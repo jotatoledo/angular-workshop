@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-    <ws-book-search fxFill (search)="handleSearch($event)"></ws-book-search>
-    <ws-book-preview-list [books]="books"></ws-book-preview-list>
-</div>
+<ws-book-search (search)="handleSearch($event)"></ws-book-search>
+<ng-template tdLoading [tdLoadingUntil]="loading" tdLoadingType="linear" tdLoadingStrategy="overlay">
+    <ws-book-preview-list fxFlex [books]="books"></ws-book-preview-list>
+</ng-template>
