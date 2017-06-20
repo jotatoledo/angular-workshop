@@ -4,6 +4,8 @@ import { SharedModule } from 'app/shared';
 
 import { BooksRoutingModule, routedComponents } from './books-routing.module';
 
+import { BookService } from './services';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +14,9 @@ import { BooksRoutingModule, routedComponents } from './books-routing.module';
   ],
   declarations: [
     routedComponents
+  ],
+  providers: [
+    BookService
   ]
 })
 export class BooksModule { }
