@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { LayoutPageComponent } from 'app/shared/containers';
+import { HomePageComponent } from './containers';
 
 const routes: Routes = [
   {
-    path: '', component: LayoutPageComponent,
+    path: '',
+    component: LayoutPageComponent,
+    pathMatch: 'full',
     children: [
-      { path: '', redirectTo: 'collection', pathMatch: 'full' },
-      { path: 'store', loadChildren: 'app/store/store.module#StoreModule' },
-      { path: 'collection', loadChildren: 'app/collection/collection.module#CollectionModule' }
+      {
+        path: '',
+        component: HomePageComponent,
+        pathMatch: 'full'
+      }
     ]
   }
 ];
@@ -17,8 +23,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BooksRoutingModule { }
+export class LandingRoutingModule { }
 
 export const routedComponents = [
-  
+  HomePageComponent
 ];

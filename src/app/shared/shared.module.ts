@@ -39,11 +39,11 @@ const SHARED_COMPONENTS = [
 ];
 
 import {
-  BookDetailsPageComponent, NotFoundPageComponent
+  BookDetailsPageComponent, NotFoundPageComponent, LayoutPageComponent
 } from './containers';
 
 const SHARED_CONTAINERS = [
-  BookDetailsPageComponent, NotFoundPageComponent
+  BookDetailsPageComponent, NotFoundPageComponent, LayoutPageComponent
 ];
 
 import { ElipsisPipe } from './pipes';

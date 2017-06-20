@@ -28,5 +28,7 @@ export class AppComponent {
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
     this._iconRegistry.addSvgIconInNamespace('icons', 'bookshelf',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/bookshelf.svg'));
+    this._iconRegistry.addSvgIconInNamespace('icons', 'angular',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/angular.svg'));
   }
 }
