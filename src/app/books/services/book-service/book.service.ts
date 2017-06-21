@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+import { environment } from 'environments/environment';
 import { extractData, handleError } from '../util';
 import { BookQuery, BookDetail, BookPresentation } from 'app/models';
 
@@ -16,7 +17,7 @@ export class BookService {
     private _http: Http
   ) {
     this.collection = [];
-    this._endPoint = 'https://www.googleapis.com/books/v1/volumes';
+    this._endPoint = environment.bookServiceEndPoint;
   }
 
   queryBooks(filter: string, startIndex = 0, maxResults = 20): Observable<BookQuery> {

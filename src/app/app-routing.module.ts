@@ -1,6 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { environment } from 'environments/environment';
 import { NotFoundPageComponent, LayoutPageComponent } from './shared';
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
 @NgModule({
     imports: [RouterModule.forRoot(routes, {
         useHash: true,
-        enableTracing: true
+        enableTracing: !environment.production
     })],
     exports: [RouterModule]
 })

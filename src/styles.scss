@@ -34,13 +34,23 @@ $theme: mat-light-theme($primary, $accent, $warn);
 }
 
 md-nav-list {
-    [md-list-item].active {
-        md-icon[md-list-avatar] {
-            background-color: mat-color($accent);
-            color: mat-color($accent, default-contrast)
+    [md-list-item]{
+        &.active{
+            md-icon[md-list-avatar] {
+                background-color: mat-color($accent);
+                color: mat-color($accent, default-contrast)
+            }
+            md-icon[md-list-icon] {
+                color: mat-color($accent);
+            }
         }
-        md-icon[md-list-icon] {
-            color: mat-color($accent);
+    }
+}
+
+ws-home-page{
+    a[md-button]:hover{
+        md-icon{
+            color: mat-color($primary)
         }
     }
 }
