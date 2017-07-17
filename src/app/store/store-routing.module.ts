@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { FindBookPageComponent } from './containers';
-
 import { BookDetailsPageComponent, NotFoundPageComponent } from 'app/shared';
-
 import { BookGuard } from 'app/books';
 
 const routes: Routes = [
