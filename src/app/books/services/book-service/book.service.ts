@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions, URLSearchParams } from '@angular/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+
 import { environment } from 'environments/environment';
-import { extractData, handleError } from '../util';
+import { handleError } from '../util';
 import { BookQuery, BookDetail, BookPresentation } from 'app/models';
 
 /**
@@ -14,32 +15,30 @@ export class BookService {
   private _endPoint: string;
   private readonly collection: BookPresentation[];
   constructor(
-    private _http: Http
+    private _http: HttpClient
   ) {
     this.collection = [];
     this._endPoint = environment.bookServiceEndPoint;
   }
 
-  queryBooks(filter: string, startIndex = 0, maxResults = 20): Observable<BookQuery> {
-    return this._http.get(`${this._endPoint}`, this.queryParams(filter, startIndex, maxResults))
-      .map(extractData)
+  queryBooks(filter: string, startIndex = 0, maxResults = 40): Observable<BookQuery> {
+    return this._http.get<BookQuery>(`${this._endPoint}`, this.queryParams(filter, startIndex, maxResults))
       .catch(handleError)
       .delay(300);
   }
 
-  private queryParams(filter: string, startIndex: number, maxResults: number): RequestOptions {
-    const params = new URLSearchParams();
-    params.set('q', filter);
-    params.set('startIndex', startIndex.toString());
-    params.set('maxResults', maxResults.toString());
-    return new RequestOptions({
-      params: params
-    });
+  private queryParams(filter: string, startIndex: number, maxResults: number) {
+    const params = new HttpParams()
+      .set('q', filter)
+      .set('startIndex', startIndex.toString())
+      .set('maxResults', maxResults.toString());
+    return {
+      params
+    };
   }
 
   getBook(id: string): Observable<BookDetail> {
-    return this._http.get(`${this._endPoint}/${id}`)
-      .map(extractData)
+    return this._http.get<BookDetail>(`${this._endPoint}/${id}`)
       .catch(handleError)
       .delay(300);
   }

@@ -1,21 +1,13 @@
 import { Response, Headers } from '@angular/http';
+import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { _throw } from 'rxjs/observable/throw';
-
-/**
- * Extracts the information received as response from a HTTP request
- * @param res the response body
- */
-export const extractData = (res: Response) => {
-    const body = res.json();
-    return body || {};
-};
 
 /**
  * Handles a possible error in the response of an HTTP request
  * @param error the error catched on a HTTP response
  */
-export const handleError = (error: Response | any): Observable<string> => {
+export const handleError = (error: HttpErrorResponse ): Observable<any> => {
     let errMsg: string;
     if (error instanceof Response) {
         const body = error.json() || '';
