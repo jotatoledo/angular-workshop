@@ -1,6 +1,9 @@
 import { Component, isDevMode } from '@angular/core';
+import 'rxjs/add/operator/finally';
+
 import { BookService } from 'app/books/services';
 import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
+
 
 @Component({
   selector: 'ws-find-book-page',
@@ -8,7 +11,7 @@ import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
   styleUrls: ['./find-book-page.component.css']
 })
 export class FindBookPageComponent {
-  loading = true;
+  loading = false;
   bookQueryResult: BookQuery;
   constructor(
     private _bookService: BookService
@@ -21,12 +24,12 @@ export class FindBookPageComponent {
       console.log('FindBookPageComponent -> handleSearch: ' + event);
     }
     if (!event || !event.length) { // true: the string is empty
-      this.loading = true;
+      this.loading = false;
       this.bookQueryResult = Object.assign({}, DEFAULT_BOOK_QUERY_RESULT);
     } else {
-      this.loading = false;
+      this.loading = true;
       this._bookService.queryBooks(event)
-        .finally(() => this.loading = true)
+        .finally(() => this.loading = false)
         .subscribe(data => this.bookQueryResult = data);
     }
   }
