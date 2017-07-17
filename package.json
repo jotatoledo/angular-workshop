@@ -1,17 +1,18 @@
 {
   "name": "angular-workshop",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "license": "MIT",
   "scripts": {
     "ng": "./node_modules/.bin/ng",
     "start": "./node_modules/.bin/ng serve",
-    "start-paot": "./node_modules/.bin/ng serve -p -aot",
-    "build": "./node_modules/.bin/ng build",
+    "start-aot":"./node_modules/.bin/ng serve --aot",
+    "start-paot": "./node_modules/.bin/ng serve -p --aot",
+    "build": "./node_modules/.bin/ng build --aot --prod --env=prod",
     "test": "./node_modules/.bin/ng test",
     "lint": "./node_modules/.bin/ng lint",
     "e2e": "./node_modules/.bin/ng e2e",
-    "ghpages": "./node_modules/.bin/ng build --base-href /angular-workshop/ -prod -aot && ngh",
-    "deploy": "./node_modules/.bin/ng build -aot -p"
+    "ghpages": "./node_modules/.bin/ng build --base-href /angular-workshop/ -prod --aot && ngh",
+    "deploy": "./node_modules/.bin/ng build --aot -p"
   },
   "repository": {
     "type": "git",
