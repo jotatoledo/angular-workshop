@@ -1,4 +1,4 @@
 <div fxLayout="row" fxLayoutWrap fxLayoutAlign="center stretch">
-  <ws-book-preview fxFlex.md="50" fxFlex="25" fxFlex.xs="100" fxFlex.sm="50" *ngFor="let book of books" [book]="book"></ws-book-preview>
+  <ws-book-preview class="cursor-pointer" fxFlex.md="50" fxFlex="25" fxFlex.xs="100" fxFlex.sm="50" *ngFor="let book of books" [book]="book"></ws-book-preview>
 </div>
 <ws-empty-collection fxFill *ngIf="empty" [title]="'No books matches'" [subtitle]="'There are no books that match the search criteria'"></ws-empty-collection>
