@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { BookService } from 'app/books/services';
 import 'rxjs/add/operator/mergeMap';
+
+import { BookService } from 'app/books/services';
 
 @Injectable()
 export class BookGuard implements CanActivate {
