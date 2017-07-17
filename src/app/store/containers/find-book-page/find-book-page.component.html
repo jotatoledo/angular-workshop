@@ -1,4 +1,4 @@
 <ws-book-search (search)="handleSearch($event)"></ws-book-search>
-<ng-template tdLoading [tdLoadingUntil]="loading" tdLoadingType="linear" tdLoadingStrategy="overlay" tdLoadingColor="accent">
+<ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingType="linear" tdLoadingStrategy="overlay" tdLoadingColor="accent">
     <ws-book-preview-list fxFlex [books]="books"></ws-book-preview-list>
 </ng-template>

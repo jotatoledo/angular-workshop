@@ -5,8 +5,7 @@ import { CovalentLoadingModule } from '@covalent/core';
 
 import { NavigationService } from './services';
 export { NavigationService };
-
-import { throwIfAlreadyLoaded } from './module-import-guard';
+import { throwIfAlreadyLoaded } from './module-import.guard';
 
 @NgModule({
   imports: [

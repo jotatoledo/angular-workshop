@@ -1,12 +1,12 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { environment } from 'environments/environment';
-import { NotFoundPageComponent, LayoutPageComponent } from './shared';
+import { NotFoundPageComponent } from './shared';
 
 const routes: Routes = [
-    { path: '', loadChildren: 'app/landing/landing.module#LandingModule', pathMatch: 'full' },
-    { path: 'books', loadChildren: 'app/books/books.module#BooksModule' },
-    { path: '404', component: LayoutPageComponent, children: [{ path: '', component: NotFoundPageComponent }] },
+    { path: '', loadChildren: 'app/landing/landing.module#LandingModule' },
+    { path: 'books', loadChildren: 'app/books/books.module#BooksModule', pathMatch: 'prefix' },
+    { path: '404', component: NotFoundPageComponent },
     { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
 
