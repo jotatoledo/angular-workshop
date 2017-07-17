@@ -6,7 +6,10 @@
   </md-card-title-group>
   <md-divider></md-divider>
   <md-card-content>
-    <p [innerHtml]="description"></p>
+    <p *ngIf="description; else elseBlock">{{ description }}</p>
+    <ng-template #elseBlock>
+      <p>No description available</p>
+    </ng-template>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions align="start">

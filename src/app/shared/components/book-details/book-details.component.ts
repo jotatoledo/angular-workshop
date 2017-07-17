@@ -33,7 +33,11 @@ export class BookDetailsComponent {
   }
 
   get subtitle() {
-    return this.book.volumeInfo.subtitle;
+    if (this.book.volumeInfo.subtitle) {
+      return this.book.volumeInfo.subtitle;
+    } else {
+      return 'No subtitle';
+    }
   }
 
   get description() {

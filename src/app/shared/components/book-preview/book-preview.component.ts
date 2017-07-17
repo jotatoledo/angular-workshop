@@ -19,7 +19,11 @@ export class BookPreviewComponent {
   }
 
   get subtitle() {
-    return this.book.volumeInfo.subtitle;
+    if (this.book.volumeInfo.subtitle) {
+      return this.book.volumeInfo.subtitle;
+    } else {
+      return 'No subtitle';
+    }
   }
 
   get description() {
@@ -30,7 +34,6 @@ export class BookPreviewComponent {
     if (this.book.volumeInfo.imageLinks) {
       return this.book.volumeInfo.imageLinks.smallThumbnail;
     }
-
     return false;
   }
 }
