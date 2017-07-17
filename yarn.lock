@@ -160,6 +160,18 @@
   version "1.0.0-beta.6"
   resolved "https://registry.yarnpkg.com/@covalent/core/-/core-1.0.0-beta.6.tgz#c0d036f7e12233c815fd274468592bcda28845cb"
 
+"@ngrx/effects@github:ngrx/effects-builds":
+  version "4.0.0-alpha.0"
+  resolved "https://codeload.github.com/ngrx/effects-builds/tar.gz/6b62a7625946f85bccdeae07e976f9c39d03da9a"
+
+"@ngrx/store-devtools@github:ngrx/store-devtools-builds":
+  version "4.0.0-alpha.0"
+  resolved "https://codeload.github.com/ngrx/store-devtools-builds/tar.gz/60eb130344eb89ebd98bebb1ee098c6f5e8abb88"
+
+"@ngrx/store@github:ngrx/store-builds":
+  version "4.0.0-alpha.0"
+  resolved "https://codeload.github.com/ngrx/store-builds/tar.gz/17e9a36d94992ebd3061db5446f8de02cac20f38"
+
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
@@ -172,6 +184,14 @@
     loader-utils "^1.0.2"
     magic-string "^0.19.0"
     source-map "^0.5.6"
+
+"@ngx-translate/core@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-7.1.0.tgz#5087a65c8ff312e4244ca0646ed45cde83b170cd"
+
+"@ngx-translate/http-loader@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-0.1.0.tgz#6029325561d7868fe325a419de2770e98ff1502e"
 
 "@types/jasmine@*", "@types/jasmine@~2.5.53":
   version "2.5.53"
