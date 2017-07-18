@@ -3,7 +3,7 @@
 </button>
 <md-menu #language="mdMenu">
   <ng-template ngFor let-item [ngForOf]="languages">
-    <button md-menu-item (click)="handleLangeChange(item)" [ngClass]="{ active: currentLanguage === item }">
+    <button md-menu-item (click)="handleLangeChange(item)" [disabled]="currentLanguage === item" [ngClass]="{ active: currentLanguage === item }">
         <md-icon class="mat-icon material-icons" svgIcon="flag:{{item}}"></md-icon>{{ item | uppercase}}
     </button>
   </ng-template>
