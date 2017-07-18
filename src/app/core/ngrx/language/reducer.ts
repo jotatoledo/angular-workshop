@@ -7,7 +7,7 @@ export interface State {
 
 const initialState: State = {
     currentLanguage: 'en',
-    languages: ['en', 'de']
+    languages: ['en', 'de', 'es']
 };
 
 export function reducer(state = initialState, action: language.Actions): State {
