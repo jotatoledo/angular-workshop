@@ -10,8 +10,7 @@ import { getStoreLoading, getStoreResults, getStoreFilter, SearchAction } from '
 @Component({
   selector: 'ws-find-book-page',
   templateUrl: './find-book-page.component.html',
-  styleUrls: ['./find-book-page.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./find-book-page.component.css']
 })
 export class FindBookPageComponent {
   loading$: Observable<boolean>;
