@@ -1,40 +1,35 @@
-import { Component, isDevMode } from '@angular/core';
-import 'rxjs/add/operator/finally';
+import { Component, isDevMode, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 
 import { BookService } from 'app/books/services';
-import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
-
+import { BookQuery, DEFAULT_BOOK_QUERY_RESULT, BookPresentation } from 'app/models/book';
+import { State } from '../../../ngrx';
+import { getStoreLoading, getStoreResults, getStoreFilter, SearchAction } from '../../ngrx';
 
 @Component({
   selector: 'ws-find-book-page',
   templateUrl: './find-book-page.component.html',
-  styleUrls: ['./find-book-page.component.css']
+  styleUrls: ['./find-book-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FindBookPageComponent {
-  loading = false;
-  bookQueryResult: BookQuery;
+  loading$: Observable<boolean>;
+  results$: Observable<BookPresentation[]>;
+  filter$: Observable<string>;
   constructor(
+    private _store: Store<State>,
     private _bookService: BookService
   ) {
-    this.bookQueryResult = Object.assign({}, DEFAULT_BOOK_QUERY_RESULT);
+    this.loading$ = _store.select(getStoreLoading);
+    this.results$ = _store.select(getStoreResults);
+    this.filter$ = _store.select(getStoreFilter);
   }
 
   handleSearch(event: string) {
     if (isDevMode()) {
       console.log('FindBookPageComponent -> handleSearch: ' + event);
     }
-    if (!event || !event.length) { // true: the string is empty
-      this.loading = false;
-      this.bookQueryResult = Object.assign({}, DEFAULT_BOOK_QUERY_RESULT);
-    } else {
-      this.loading = true;
-      this._bookService.queryBooks(event)
-        .finally(() => this.loading = false)
-        .subscribe(data => this.bookQueryResult = data);
-    }
-  }
-
-  get books() {
-    return this.bookQueryResult.items;
+    this._store.dispatch(new SearchAction(event));
   }
 }
