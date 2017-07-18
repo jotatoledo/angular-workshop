@@ -1,0 +1,9 @@
+{
+    "TERM": {
+        "HOME": "Hauptseite",
+        "BACK": "Zurück"
+    },
+    "LANGUAGE_SELECTOR": {
+        "TOOLTIP": "Sprache"
+    }
+}

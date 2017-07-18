@@ -1,0 +1,10 @@
+<button md-icon-button mdTooltip="{{'LANGUAGE_SELECTOR.TOOLTIP' | translate}}" [mdMenuTriggerFor]="language">
+    <md-icon>translate</md-icon>
+</button>
+<md-menu #language="mdMenu">
+  <ng-template ngFor let-item [ngForOf]="languages">
+    <button md-menu-item (click)="handleLangeChange(item)" [disabled]="currentLanguage === item" [ngClass]="{ active: currentLanguage === item }">
+        <md-icon class="mat-icon material-icons" svgIcon="flag:{{item}}"></md-icon>{{ item | uppercase}}
+    </button>
+  </ng-template>
+</md-menu>
