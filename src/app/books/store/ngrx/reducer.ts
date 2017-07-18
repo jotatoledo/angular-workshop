@@ -1,13 +1,15 @@
 import * as store from './actions';
-import { BookQuery } from 'app/models/book';
+import { BookQuery, BookDetail } from 'app/models/book';
 
 export interface State {
+    selected: BookDetail;
     filter: string;
     loading: boolean;
     store: BookQuery;
 };
 
 const initialState: State = {
+    selected: null,
     filter: null,
     loading: false,
     store: {
