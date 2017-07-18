@@ -37,6 +37,7 @@
             <a md-icon-button mdTooltip="Github" href="https://github.com/jotatoledo/angular-workshop" target="_blank">
                 <md-icon svgIcon="icons:github"></md-icon>
             </a>
+            <ws-language-selector (languageChange)="handleLanguageChange($event)" [currentLanguage]="currentLanguage$ | async" [languages]="languages$ | async"></ws-language-selector>
         </div>
         <div class="md-content" fxFlex md-scroll-y>
             <router-outlet></router-outlet>
