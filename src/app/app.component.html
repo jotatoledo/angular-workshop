@@ -6,7 +6,7 @@
         <md-nav-list>
             <a md-list-item routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" (click)="layout.close()">
                 <md-icon md-list-avatar>home</md-icon>
-                <h3 md-line>Home</h3>
+                <h3 md-line>{{'TERM.HOME' | translate}}</h3>
                 <p md-line class="secondary">Landing page</p>
             </a>
             <a md-list-item routerLink="/books/collection" routerLinkActive="active" (click)="layout.close()">
