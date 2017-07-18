@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
+import { TranslateModule } from '@ngx-translate/core';
 import {
   MdButtonModule, MdCardModule, MdToolbarModule,
   MdTooltipModule, MdIconModule, MdListModule,
@@ -56,6 +56,7 @@ const SHARED_PIPES = [
   imports: [
     CommonModule,
     RouterModule,
+    TranslateModule,
     MATERIAL_MODULES,
     COVALENT_MODULES,
     FLEX_LAYOUT_MODULES,
@@ -69,6 +70,7 @@ const SHARED_PIPES = [
     MATERIAL_MODULES,
     COVALENT_MODULES,
     FLEX_LAYOUT_MODULES,
+    TranslateModule,
     SHARED_COMPONENTS,
     SHARED_CONTAINERS,
   ]
