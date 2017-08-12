@@ -1,3 +1,5 @@
+[![Dependency Status](https://dependencyci.com/github/jotatoledo/angular-workshop/badge)](https://dependencyci.com/github/jotatoledo/angular-workshop)
+
 # Angular Workshop
 
 A showcase application that uses Google´s books Web API to query information and simulates a "favorites" collection.
