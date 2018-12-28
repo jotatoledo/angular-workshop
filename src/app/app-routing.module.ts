@@ -4,13 +4,12 @@ import { QuicklinkStrategy } from 'ngx-quicklink';
 
 import { HomePageComponent } from '@ws/core';
 import { NotFoundPageComponent } from '@ws/shared';
+import { environment } from '@environment';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  {
-    path: 'books',
-    loadChildren: 'app/books/books.module#BooksModule'
-  },
+  { path: 'store', loadChildren: './features/store/store.module#StoreModule' },
+  { path: 'collection', loadChildren: './features/collection/collection.module#CollectionModule' },
   { path: '404', component: NotFoundPageComponent },
   { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
@@ -20,7 +19,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       useHash: true,
       preloadingStrategy: QuicklinkStrategy,
-      paramsInheritanceStrategy: 'always'
+      paramsInheritanceStrategy: 'always',
+      enableTracing: !environment.production
     })
   ],
   exports: [RouterModule]

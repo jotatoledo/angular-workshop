@@ -9,12 +9,12 @@
                 <h3 matLine>Home</h3>
                 <p matLine class="secondary">Landing page</p>
             </a>
-            <a mat-list-item routerLink="/books/collection" routerLinkActive="active" (click)="layout.close()">
+            <a mat-list-item routerLink="/collection" routerLinkActive="active" (click)="layout.close()">
                 <mat-icon matListIcon>book</mat-icon>
                 <h3 matLine>My Collection</h3>
                 <p matLine class="secondary">View your book collection</p>
             </a>
-            <a mat-list-item routerLink="/books/store" routerLinkActive="active" (click)="layout.close()">
+            <a mat-list-item routerLink="/store" routerLinkActive="active" (click)="layout.close()">
                 <mat-icon matListIcon>search</mat-icon>
                 <h3 matLine>Search books</h3>
                 <p matLine>Find your next book!</p>
@@ -28,10 +28,10 @@
         <div td-toolbar-content fxLayout="row" fxLayoutAlign="center center" fxFlex>
             <span>Book Collection</span>
             <span fxFlex></span>
-            <a mat-icon-button matTooltip="Collection" routerLink="/books/collection">
+            <a mat-icon-button matTooltip="Collection" routerLink="/collection">
                 <mat-icon>book</mat-icon>
             </a>
-            <a mat-icon-button matTooltip="Store" routerLink="/books/store">
+            <a mat-icon-button matTooltip="Store" routerLink="/store">
                 <mat-icon>search</mat-icon>
             </a>
             <a mat-icon-button matTooltip="Github" href="https://github.com/jotatoledo/angular-workshop" target="_blank">
