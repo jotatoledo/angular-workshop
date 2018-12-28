@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "ghpages": "ng build --base-href /angular-workshop/ -prod --aot && ngh",
     "deploy": "ng build --aot -p",
-    "changelog": "conventional-changelog -i CHANGELOG.md -s -p angular"
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -p angular",
+    "format": "prettier --write --config ./.prettierrc.json --list-different ./src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss,.html}"
   },
   "repository": {
     "type": "git",
