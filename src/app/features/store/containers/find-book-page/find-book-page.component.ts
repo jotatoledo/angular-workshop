@@ -1,11 +1,8 @@
+import { finalize } from 'rxjs/operators';
+import { Component } from '@angular/core';
 
-import {finalize} from 'rxjs/operators';
-import { Component, isDevMode } from '@angular/core';
-
-
-import { BookService } from 'app/books/services';
-import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
-
+import { DEFAULT_BOOK_QUERY_RESULT, BookQuery } from '@ws/models';
+import { BookService } from '@ws/core';
 
 @Component({
   selector: 'ws-find-book-page',
@@ -15,24 +12,21 @@ import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
 export class FindBookPageComponent {
   loading = false;
   bookQueryResult: BookQuery;
-  constructor(
-    private _bookService: BookService
-  ) {
-    this.bookQueryResult = Object.assign({}, DEFAULT_BOOK_QUERY_RESULT);
+  constructor(private _bookService: BookService) {
+    this.bookQueryResult = { ...DEFAULT_BOOK_QUERY_RESULT };
   }
 
   handleSearch(event: string) {
-    if (isDevMode()) {
-      console.log('FindBookPageComponent -> handleSearch: ' + event);
-    }
-    if (!event || !event.length) { // true: the string is empty
+    if (!event || !event.length) {
+      // true: the string is empty
       this.loading = false;
-      this.bookQueryResult = Object.assign({}, DEFAULT_BOOK_QUERY_RESULT);
+      this.bookQueryResult = { ...DEFAULT_BOOK_QUERY_RESULT };
     } else {
       this.loading = true;
-      this._bookService.queryBooks(event).pipe(
-        finalize(() => this.loading = false))
-        .subscribe(data => this.bookQueryResult = data);
+      this._bookService
+        .queryBooks(event)
+        .pipe(finalize(() => (this.loading = false)))
+        .subscribe(data => (this.bookQueryResult = data));
     }
   }
 
