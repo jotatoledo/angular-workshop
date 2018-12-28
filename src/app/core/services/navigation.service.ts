@@ -10,7 +10,9 @@ import {
 import { TdLoadingService } from '@covalent/core';
 import { filter } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class NavigationService {
   private id = 'app.loading';
   constructor(

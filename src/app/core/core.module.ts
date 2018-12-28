@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CovalentLoadingModule } from '@covalent/core';
 
-import { NavigationService } from './services';
-export { NavigationService };
 import { throwIfAlreadyLoaded } from './module-import.guard';
+import { HomePageComponent } from './views/home-page/home-page.component';
 
 @NgModule({
   imports: [
@@ -13,13 +12,12 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
     RouterModule,
     CovalentLoadingModule
   ],
+  declarations: [
+    HomePageComponent
+  ],
   exports: [
-    CovalentLoadingModule
-  ],
-  providers: [
-    NavigationService
-  ],
-  declarations: []
+    HomePageComponent
+  ]
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

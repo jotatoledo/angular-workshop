@@ -1,11 +1,12 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { environment } from 'environments/environment';
-import { NotFoundPageComponent } from './shared';
-import { QuicklinkModule, QuicklinkStrategy } from 'ngx-quicklink';
+import { QuicklinkStrategy } from 'ngx-quicklink';
+
+import { HomePageComponent } from '@ws/core';
+import { NotFoundPageComponent } from '@ws/shared';
 
 const routes: Routes = [
-  { path: '', loadChildren: 'app/landing/landing.module#LandingModule' },
+  { path: '', component: HomePageComponent },
   {
     path: 'books',
     loadChildren: 'app/books/books.module#BooksModule'
@@ -18,7 +19,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       useHash: true,
-      enableTracing: !environment.production,
       preloadingStrategy: QuicklinkStrategy,
       paramsInheritanceStrategy: 'always'
     })
