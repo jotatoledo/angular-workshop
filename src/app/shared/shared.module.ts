@@ -2,77 +2,48 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
-  MatButtonModule, MatCardModule, MatToolbarModule,
-  MatTooltipModule, MatIconModule, MatListModule,
-} from '@angular/material';
-
-const MATERIAL_MODULES = [
-  MatButtonModule, MatCardModule, MatToolbarModule,
-  MatTooltipModule, MatIconModule, MatListModule,
-];
-
-import {
-  CovalentLayoutModule, CovalentSearchModule,
-} from '@covalent/core';
-
-const COVALENT_MODULES = [
-  CovalentLayoutModule, CovalentSearchModule,
-];
-
-import {
-  FlexLayoutModule
-} from '@angular/flex-layout';
-
-const FLEX_LAYOUT_MODULES = [
-  FlexLayoutModule,
-];
-
-import {
-  BookPreviewComponent, BookPreviewListComponent,
-  EmptyCollectionComponent, BookDetailsComponent
+  BookPreviewComponent,
+  BookPreviewListComponent,
+  EmptyCollectionComponent,
+  BookDetailsComponent
 } from './components';
 
 const SHARED_COMPONENTS = [
-  BookPreviewComponent, BookPreviewListComponent,
-  EmptyCollectionComponent, BookDetailsComponent
+  BookPreviewComponent,
+  BookPreviewListComponent,
+  EmptyCollectionComponent,
+  BookDetailsComponent
 ];
 
-import {
-  BookDetailsPageComponent, NotFoundPageComponent
-} from './containers';
+import { BookDetailsPageComponent, NotFoundPageComponent } from './containers';
 
-const SHARED_CONTAINERS = [
-  BookDetailsPageComponent, NotFoundPageComponent
-];
+const SHARED_CONTAINERS = [BookDetailsPageComponent, NotFoundPageComponent];
 
 import { ElipsisPipe } from './pipes';
-const SHARED_PIPES = [
-  ElipsisPipe
-];
-
+const SHARED_PIPES = [ElipsisPipe];
+import { MaterialModule } from './material/material.module';
+import { CovalentModule } from './covalent/covalent.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MATERIAL_MODULES,
-    COVALENT_MODULES,
-    FLEX_LAYOUT_MODULES,
+    FlexLayoutModule,
+    MaterialModule,
+    CovalentModule
   ],
-  declarations: [
-    SHARED_COMPONENTS,
-    SHARED_CONTAINERS,
-    SHARED_PIPES,
-  ],
+  declarations: [SHARED_COMPONENTS, SHARED_CONTAINERS, SHARED_PIPES],
   exports: [
-    MATERIAL_MODULES,
-    COVALENT_MODULES,
-    FLEX_LAYOUT_MODULES,
+    CommonModule,
+    FlexLayoutModule,
+    QuicklinkModule,
+    MaterialModule,
+    CovalentModule,
     SHARED_COMPONENTS,
-    SHARED_CONTAINERS,
-    QuicklinkModule
+    SHARED_CONTAINERS
   ]
 })
-export class SharedModule { }
+export class SharedModule {}
