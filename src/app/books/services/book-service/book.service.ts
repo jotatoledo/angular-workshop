@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-import { of } from "rxjs/Observable/of";
-import { environment } from "environments/environment";
-import { extractData, handleError } from "../util";
-import { BookQuery, BookDetail, BookPresentation } from "app/models";
+import { catchError, map, delay } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+
+import { environment } from 'environments/environment';
+import { BookQuery, BookDetail, BookPresentation } from 'app/models';
 
 /**
  * API specification: https://developers.google.com/books/docs/v1/using
@@ -27,10 +27,7 @@ export class BookService {
     return this._http
       .get<BookQuery>(`${this._endPoint}`, {
         params
-      })
-      .map(extractData)
-      .catch(handleError)
-      .delay(300);
+      });
   }
 
   private queryParams(
@@ -40,17 +37,13 @@ export class BookService {
   ): HttpParams {
     let params = new HttpParams();
     return params
-      .set("q", filter)
-      .set("startIndex", startIndex.toString())
-      .set("maxResults", maxResults.toString());
+      .set('q', filter)
+      .set('startIndex', startIndex.toString())
+      .set('maxResults', maxResults.toString());
   }
 
   getBook(id: string): Observable<BookDetail> {
-    return this._http
-      .get<BookDetail>(`${this._endPoint}/${id}`)
-      .map(extractData)
-      .catch(handleError)
-      .delay(300);
+    return this._http.get<BookDetail>(`${this._endPoint}/${id}`);
   }
 
   addToCollection(book: BookDetail) {

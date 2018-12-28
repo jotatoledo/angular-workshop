@@ -1,9 +1,17 @@
-<mat-toolbar fxLayout="colum" fxLayoutAlign="center center">
-  <div fxFill fxLayout="row" fxLayoutAlign="center center">
-    <p>Search books</p>
-  </div>
+<mat-toolbar>
   <mat-toolbar-row>
-    <td-search-box [alwaysVisible]="true" placeholder="Search here" [showUnderline]="true" [debounce]="500" (searchDebounce)="handleSearch($event)">
+    <div fxFill fxLayout="row" fxLayoutAlign="center center">
+      <p>Search books</p>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <td-search-box
+      [alwaysVisible]="true"
+      placeholder="Search here"
+      [showUnderline]="true"
+      [debounce]="500"
+      (searchDebounce)="handleSearch($event)"
+    >
     </td-search-box>
   </mat-toolbar-row>
 </mat-toolbar>

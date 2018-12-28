@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CovalentLoadingModule } from '@covalent/core';
 
 import { SharedModule } from 'app/shared';
-
-import {  BookSearchComponent} from './components';
+import { BookSearchComponent } from './components';
 import { StoreRoutingModule, routedComponents } from './store-routing.module';
-import { CovalentLoadingModule } from '@covalent/core';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     CovalentLoadingModule,
-    StoreRoutingModule,
+    StoreRoutingModule
   ],
-  declarations: [
-    BookSearchComponent,
-    routedComponents,
-  ]
+  declarations: [BookSearchComponent, routedComponents]
 })
-export class StoreModule { }
+export class StoreModule {}

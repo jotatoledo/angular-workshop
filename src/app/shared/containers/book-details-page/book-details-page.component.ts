@@ -1,6 +1,6 @@
 import { Component, Input, isDevMode } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { BookService } from 'app/books/services';
 import { BookDetail } from 'app/models';
 
