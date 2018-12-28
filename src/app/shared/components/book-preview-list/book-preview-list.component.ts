@@ -4,7 +4,7 @@ import { BookPresentation } from 'app/models';
 @Component({
   selector: 'ws-book-preview-list',
   templateUrl: './book-preview-list.component.html',
-  styleUrls: ['./book-preview-list.component.css'],
+  styleUrls: ['./book-preview-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookPreviewListComponent {

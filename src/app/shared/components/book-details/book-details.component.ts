@@ -4,7 +4,7 @@ import { BookDetail } from 'app/models';
 @Component({
   selector: 'ws-book-details',
   templateUrl: './book-details.component.html',
-  styleUrls: ['./book-details.component.css'],
+  styleUrls: ['./book-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookDetailsComponent {

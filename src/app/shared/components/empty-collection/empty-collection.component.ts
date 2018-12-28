@@ -3,7 +3,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'ws-empty-collection',
   templateUrl: './empty-collection.component.html',
-  styleUrls: ['./empty-collection.component.css'],
+  styleUrls: ['./empty-collection.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmptyCollectionComponent {

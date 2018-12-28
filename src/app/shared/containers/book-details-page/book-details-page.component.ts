@@ -7,7 +7,7 @@ import { BookDetail } from 'app/models';
 @Component({
   selector: 'ws-book-details-page',
   templateUrl: './book-details-page.component.html',
-  styleUrls: ['./book-details-page.component.css']
+  styleUrls: ['./book-details-page.component.scss']
 })
 export class BookDetailsPageComponent {
   inCollection$: Observable<boolean>;

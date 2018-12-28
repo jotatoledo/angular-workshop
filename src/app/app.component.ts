@@ -7,7 +7,7 @@ import { NavigationService } from 'app/core/core.module';
 @Component({
   selector: 'ws-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   constructor(

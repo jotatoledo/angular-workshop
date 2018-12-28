@@ -8,7 +8,7 @@ import { BookQuery, DEFAULT_BOOK_QUERY_RESULT } from 'app/models';
 @Component({
   selector: 'ws-find-book-page',
   templateUrl: './find-book-page.component.html',
-  styleUrls: ['./find-book-page.component.css']
+  styleUrls: ['./find-book-page.component.scss']
 })
 export class FindBookPageComponent {
   loading = false;

@@ -6,7 +6,7 @@ import { BookPresentation } from 'app/models';
 @Component({
   selector: 'ws-book-collection-page',
   templateUrl: './book-collection-page.component.html',
-  styleUrls: ['./book-collection-page.component.css']
+  styleUrls: ['./book-collection-page.component.scss']
 })
 export class BookCollectionPageComponent {
   books$: Observable<BookPresentation[]>;
