@@ -19,7 +19,8 @@
             "assets": ["src/assets", "src/favicon.ico"],
             "styles": [
               "node_modules/@covalent/core/common/platform.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": []
           },
@@ -68,10 +69,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
-            "styles": [
-              "node_modules/@covalent/core/common/platform.css",
-              "src/styles.scss"
-            ],
+            "styles": ["node_modules/@covalent/core/common/platform.scss"],
             "assets": ["src/assets", "src/favicon.ico"]
           }
         },

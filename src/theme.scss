@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, "Helvetica Neue", sans-serif',
+  $display-4: mat-typography-level(112px, 112px, 300),
+  $display-3: mat-typography-level(56px, 56px, 400),
+  $display-2: mat-typography-level(45px, 48px, 400),
+  $display-1: mat-typography-level(34px, 40px, 400),
+  $headline: mat-typography-level(24px, 32px, 400),
+  $title: mat-typography-level(20px, 32px, 500),
+  $subheading-2: mat-typography-level(16px, 28px, 400),
+  $subheading-1: mat-typography-level(15px, 24px, 400),
+  $body-2: mat-typography-level(14px, 24px, 500),
+  $body-1: mat-typography-level(14px, 20px, 400),
+  $caption: mat-typography-level(12px, 20px, 400),
+  $button: mat-typography-level(14px, 14px, 500),
+  $input: mat-typography-level(inherit, 1.125, 400)
+);
+
+@include mat-core($custom-typography);
+
+$primary: mat-palette($mat-deep-purple, 500);
+$accent: mat-palette($mat-green, 700, A100, A400);
+$warn: mat-palette($mat-red, A700);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+
+.dark-theme {
+  $dark-primary: mat-palette($mat-blue-grey);
+  $dark-accent: mat-palette($mat-indigo, A200, A100, A400);
+  $dark-warn: mat-palette($mat-deep-orange);
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+  @include angular-material-theme($dark-theme);
+  @include covalent-theme($dark-theme);
+}
+
+mat-nav-list {
+  [mat-list-item] {
+    &.active {
+      mat-icon[mat-list-avatar] {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+      }
+      mat-icon[mat-list-icon] {
+        color: mat-color($accent);
+      }
+    }
+  }
+}
+
+ws-home-page {
+  a[mat-button]:hover {
+    mat-icon {
+      color: mat-color($primary);
+    }
+  }
+}
