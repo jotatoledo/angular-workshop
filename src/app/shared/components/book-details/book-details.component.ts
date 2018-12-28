@@ -1,5 +1,12 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { BookDetail } from 'app/models';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy
+} from '@angular/core';
+
+import { BookDetail } from '@ws/models';
 
 @Component({
   selector: 'ws-book-details',
@@ -22,8 +29,8 @@ export class BookDetailsComponent {
   }
 
   /**
-    * Tip: Utilize getters to keep templates clean
-    */
+   * Tip: Utilize getters to keep templates clean
+   */
   get id() {
     return this.book.id;
   }
@@ -41,7 +48,9 @@ export class BookDetailsComponent {
   }
 
   get thumbnail() {
-    return this.book.volumeInfo.imageLinks
-      && this.book.volumeInfo.imageLinks.smallThumbnail;
+    return (
+      this.book.volumeInfo.imageLinks &&
+      this.book.volumeInfo.imageLinks.smallThumbnail
+    );
   }
 }

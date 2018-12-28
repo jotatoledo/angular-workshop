@@ -1,8 +1,9 @@
-import { Component, Input, isDevMode } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { BookService } from 'app/books/services';
-import { BookDetail } from 'app/models';
+
+import { BookDetail } from '@ws/models';
+import { BookService, BookCollectionService } from '@ws/core';
 
 @Component({
   selector: 'ws-book-details-page',
@@ -14,10 +15,11 @@ export class BookDetailsPageComponent {
   book$: Observable<BookDetail>;
   constructor(
     private _bookService: BookService,
+    private _collectionService: BookCollectionService,
     private _route: ActivatedRoute
   ) {
     this.book$ = this._bookService.getBook(this.bookId);
-    this.inCollection$ = this._bookService.isInCollection(this.bookId);
+    this.inCollection$ = this._collectionService.isInCollection(this.bookId);
   }
 
   private get bookId() {
@@ -25,18 +27,12 @@ export class BookDetailsPageComponent {
   }
 
   handleAdd(event: BookDetail) {
-    if (isDevMode()) {
-      console.log('BookDetailsPageComponent -> handleAdd: ' + event.id);
-    }
-    this._bookService.addToCollection(event);
-    this.inCollection$ = this._bookService.isInCollection(event.id);
+    this._collectionService.addToCollection(event);
+    this.inCollection$ = this._collectionService.isInCollection(event.id);
   }
 
   handleRemove(event: string) {
-    if (isDevMode()) {
-      console.log('BookDetailsPageComponent -> handleRemove: ' + event);
-    }
-    this._bookService.removeFromCollection(event);
-    this.inCollection$ = this._bookService.isInCollection(event);
+    this._collectionService.removeFromCollection(event);
+    this.inCollection$ = this._collectionService.isInCollection(event);
   }
 }

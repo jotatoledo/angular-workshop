@@ -1,5 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { BookPresentation } from 'app/models';
+
+import { BookPresentation } from '@ws/models';
 
 @Component({
   selector: 'ws-book-preview',
