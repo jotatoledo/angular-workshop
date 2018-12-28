@@ -1,9 +1,9 @@
-<md-toolbar fxLayout="colum" fxLayoutAlign="center center">
+<mat-toolbar fxLayout="colum" fxLayoutAlign="center center">
   <div fxFill fxLayout="row" fxLayoutAlign="center center">
     <p>Search books</p>
   </div>
-  <md-toolbar-row>
+  <mat-toolbar-row>
     <td-search-box [alwaysVisible]="true" placeholder="Search here" [showUnderline]="true" [debounce]="500" (searchDebounce)="handleSearch($event)">
     </td-search-box>
-  </md-toolbar-row>
-</md-toolbar>
+  </mat-toolbar-row>
+</mat-toolbar>

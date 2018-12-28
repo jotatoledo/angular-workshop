@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import {
-  MdButtonModule, MdCardModule, MdToolbarModule,
-  MdTooltipModule, MdIconModule, MdListModule,
+  MatButtonModule, MatCardModule, MatToolbarModule,
+  MatTooltipModule, MatIconModule, MatListModule,
 } from '@angular/material';
 
 const MATERIAL_MODULES = [
-  MdButtonModule, MdCardModule, MdToolbarModule,
-  MdTooltipModule, MdIconModule, MdListModule,
+  MatButtonModule, MatCardModule, MatToolbarModule,
+  MatTooltipModule, MatIconModule, MatListModule,
 ];
 
 import {

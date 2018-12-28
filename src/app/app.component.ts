@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { NavigationService } from 'app/core/core.module';
 
 @Component({
@@ -12,7 +12,7 @@ import { NavigationService } from 'app/core/core.module';
 export class AppComponent {
   constructor(
     private _navService: NavigationService,
-    private _iconRegistry: MdIconRegistry,
+    private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
     private _title: Title
   ) {
