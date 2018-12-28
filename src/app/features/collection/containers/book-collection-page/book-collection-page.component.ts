@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BookService } from 'app/books//services';
-import { BookPresentation } from 'app/models';
+
+import { BookPresentation } from '@ws/models';
+import { BookCollectionService } from '@ws/core';
 
 @Component({
   selector: 'ws-book-collection-page',
@@ -10,9 +11,7 @@ import { BookPresentation } from 'app/models';
 })
 export class BookCollectionPageComponent {
   books$: Observable<BookPresentation[]>;
-  constructor(
-    private _bookService: BookService
-  ) {
-    this.books$ = this._bookService.getCollection();
+  constructor(private _collectionService: BookCollectionService) {
+    this.books$ = this._collectionService.getCollection();
   }
 }
