@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
   Router,
-  ActivatedRoute,
   NavigationEnd,
   NavigationStart,
   NavigationError,
@@ -10,9 +9,7 @@ import {
 import { TdLoadingService } from '@covalent/core';
 import { filter } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NavigationService {
   private id = 'app.loading';
   constructor(
