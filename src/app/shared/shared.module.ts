@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 import {
   MatButtonModule, MatCardModule, MatToolbarModule,
@@ -71,6 +72,7 @@ const SHARED_PIPES = [
     FLEX_LAYOUT_MODULES,
     SHARED_COMPONENTS,
     SHARED_CONTAINERS,
+    QuicklinkModule
   ]
 })
 export class SharedModule { }

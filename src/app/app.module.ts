@@ -10,9 +10,7 @@ import { SharedModule } from './shared';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     SharedModule,
     CoreModule,
@@ -22,9 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpClientModule
   ],
-  providers: [
-    Title
-  ],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
