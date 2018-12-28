@@ -1,4 +1,4 @@
-import { mergeMap, catchError, map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-import { BookService } from 'app/books/services';
+import { BookService } from '@ws/core/services';
 
 @Injectable()
 export class BookGuard implements CanActivate {
