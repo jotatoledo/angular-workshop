@@ -5,17 +5,17 @@
         email="firstname.lastname@bosch.com">
         <mat-nav-list>
             <a mat-list-item routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" (click)="layout.close()">
-                <mat-icon mat-list-avatar>home</mat-icon>
+                <mat-icon matListIcon>home</mat-icon>
                 <h3 matLine>Home</h3>
                 <p matLine class="secondary">Landing page</p>
             </a>
             <a mat-list-item routerLink="/books/collection" routerLinkActive="active" (click)="layout.close()">
-                <mat-icon mat-list-avatar>book</mat-icon>
+                <mat-icon matListIcon>book</mat-icon>
                 <h3 matLine>My Collection</h3>
                 <p matLine class="secondary">View your book collection</p>
             </a>
             <a mat-list-item routerLink="/books/store" routerLinkActive="active" (click)="layout.close()">
-                <mat-icon mat-list-avatar>search</mat-icon>
+                <mat-icon matListIcon>search</mat-icon>
                 <h3 matLine>Search books</h3>
                 <p matLine>Find your next book!</p>
             </a>
@@ -38,7 +38,7 @@
                 <mat-icon svgIcon="icons:github"></mat-icon>
             </a>
         </div>
-        <div class="md-content" fxFlex md-scroll-y>
+        <div class="mat-content" fxFlex>
             <router-outlet></router-outlet>
         </div>
         <td-layout-footer>
