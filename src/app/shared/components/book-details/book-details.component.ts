@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { BookDetail } from '@ws/models';
 
@@ -48,9 +42,6 @@ export class BookDetailsComponent {
   }
 
   get thumbnail() {
-    return (
-      this.book.volumeInfo.imageLinks &&
-      this.book.volumeInfo.imageLinks.smallThumbnail
-    );
+    return this.book.volumeInfo.imageLinks && this.book.volumeInfo.imageLinks.smallThumbnail;
   }
 }

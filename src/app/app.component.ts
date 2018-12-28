@@ -9,11 +9,7 @@ import { NavigationService } from '@ws/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(
-    _navService: NavigationService,
-
-    private _title: Title
-  ) {
+  constructor(_navService: NavigationService, private _title: Title) {
     _navService.startWatching();
     this._title.setTitle('Angular Workshop -  Book Store');
   }

@@ -28,13 +28,7 @@ import { MaterialModule } from './material/material.module';
 import { CovalentModule } from './covalent/covalent.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    FlexLayoutModule,
-    MaterialModule,
-    CovalentModule
-  ],
+  imports: [CommonModule, RouterModule, FlexLayoutModule, MaterialModule, CovalentModule],
   declarations: [SHARED_COMPONENTS, SHARED_CONTAINERS, SHARED_PIPES],
   exports: [
     CommonModule,

@@ -8,9 +8,8 @@ describe('FindBookPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FindBookPageComponent ]
-    })
-    .compileComponents();
+      declarations: [FindBookPageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

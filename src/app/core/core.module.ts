@@ -7,22 +7,11 @@ import { CovalentLoadingModule } from '@covalent/core';
 
 import { throwIfAlreadyLoaded } from './module-import.guard';
 import { HomePageComponent } from './views/home-page/home-page.component';
-import {
-  BookService,
-  NavigationService,
-  BookCollectionService
-} from './services';
+import { BookService, NavigationService, BookCollectionService } from './services';
 import { BookGuard } from './guards';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    CovalentLoadingModule
-  ],
+  imports: [CommonModule, RouterModule, MatIconModule, MatButtonModule, FlexLayoutModule, CovalentLoadingModule],
   declarations: [HomePageComponent],
   providers: [NavigationService, BookService, BookCollectionService, BookGuard],
   exports: [HomePageComponent]

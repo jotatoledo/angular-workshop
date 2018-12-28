@@ -1,21 +1,12 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  NavigationEnd,
-  NavigationStart,
-  NavigationError,
-  NavigationCancel
-} from '@angular/router';
+import { Router, NavigationEnd, NavigationStart, NavigationError, NavigationCancel } from '@angular/router';
 import { TdLoadingService } from '@covalent/core';
 import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class NavigationService {
   private id = 'app.loading';
-  constructor(
-    private _loadingService: TdLoadingService,
-    private _router: Router
-  ) {}
+  constructor(private _loadingService: TdLoadingService, private _router: Router) {}
 
   public startWatching() {
     this.startLoading();
@@ -23,11 +14,9 @@ export class NavigationService {
   }
 
   private startLoading() {
-    this._router.events
-      .pipe(filter(event => event instanceof NavigationStart))
-      .subscribe(() => {
-        this._loadingService.register(this.id);
-      });
+    this._router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(() => {
+      this._loadingService.register(this.id);
+    });
   }
 
   private resolveLoading() {
@@ -35,9 +24,7 @@ export class NavigationService {
       .pipe(
         filter(
           event =>
-            event instanceof NavigationCancel ||
-            event instanceof NavigationError ||
-            event instanceof NavigationEnd
+            event instanceof NavigationCancel || event instanceof NavigationError || event instanceof NavigationEnd
         )
       )
       .subscribe(() => {

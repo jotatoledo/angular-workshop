@@ -25,17 +25,13 @@ import { AppRoutingModule } from './app-routing.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(
-    private _iconRegistry: MatIconRegistry,
-    private _domSanitizer: DomSanitizer
-  ) {
+  constructor(private _iconRegistry: MatIconRegistry, private _domSanitizer: DomSanitizer) {
     this.registerIcons();
   }
 
   private registerIcons() {
     const namespace = 'icons';
-    const createPath: (iconName: string) => string = name =>
-      `assets/icons/${name}.svg`;
+    const createPath: (iconName: string) => string = name => `assets/icons/${name}.svg`;
     const createIconMetadata: (icon: string) => IconMetaData = name => ({
       name,
       namespace,
@@ -47,11 +43,7 @@ export class AppModule {
 
   private register(icons: IconMetaData[]) {
     icons.forEach(({ name, path, namespace }) =>
-      this._iconRegistry.addSvgIconInNamespace(
-        namespace,
-        name,
-        this._domSanitizer.bypassSecurityTrustResourceUrl(path)
-      )
+      this._iconRegistry.addSvgIconInNamespace(namespace, name, this._domSanitizer.bypassSecurityTrustResourceUrl(path))
     );
   }
 }

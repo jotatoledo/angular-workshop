@@ -5,9 +5,7 @@
     <mat-card-subtitle *ngIf="subtitle">{{ subtitle }}</mat-card-subtitle>
   </mat-card-title-group>
   <mat-divider></mat-divider>
-  <mat-card-content>
-    <p [innerHtml]="description"></p>
-  </mat-card-content>
+  <mat-card-content> <p [innerHtml]="description"></p> </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions align="start">
     <button mat-raised-button color="warn" *ngIf="inCollection" (click)="handleRemove()">

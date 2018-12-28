@@ -1,14 +1,8 @@
 <mat-card>
   <mat-card-title>404: Not Found</mat-card-title>
-  <mat-card-content>
-    <p>Hey! It looks like this page doesn't exist yet.</p>
-  </mat-card-content>
+  <mat-card-content> <p>Hey! It looks like this page doesn't exist yet.</p> </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="accent" (click)="goBack()">
-      <mat-icon>undo</mat-icon> Back to last page!
-    </button>
-    <a mat-raised-button color="primary" [routerLink]="['/']">
-      <mat-icon>home</mat-icon> Take me home!
-    </a>
+    <button mat-raised-button color="accent" (click)="goBack()"><mat-icon>undo</mat-icon> Back to last page!</button>
+    <a mat-raised-button color="primary" [routerLink]="['/']"> <mat-icon>home</mat-icon> Take me home! </a>
   </mat-card-actions>
 </mat-card>

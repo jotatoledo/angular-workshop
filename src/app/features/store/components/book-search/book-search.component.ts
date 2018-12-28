@@ -8,7 +8,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class BookSearchComponent {
   @Output() search = new EventEmitter<string>();
 
-
   handleSearch(event: string) {
     this.search.emit(event);
   }

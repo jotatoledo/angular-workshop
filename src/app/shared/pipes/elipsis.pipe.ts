@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ElipsisPipe implements PipeTransform {
   transform(str: string, strLength: number = 250) {
-    const withoutHtml = str.replace(/(<([^>]+)>)/ig, '');
+    const withoutHtml = str.replace(/(<([^>]+)>)/gi, '');
 
     if (str.length >= strLength) {
       return `${withoutHtml.slice(0, strLength)}...`;

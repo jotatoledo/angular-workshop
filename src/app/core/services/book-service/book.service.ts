@@ -15,22 +15,14 @@ export class BookService {
     this._endPoint = environment.bookServiceEndPoint;
   }
 
-  queryBooks(
-    filter: string,
-    startIndex = 0,
-    maxResults = 20
-  ): Observable<BookQuery> {
+  queryBooks(filter: string, startIndex = 0, maxResults = 20): Observable<BookQuery> {
     const params = this.queryParams(filter, startIndex, maxResults);
     return this._http.get<BookQuery>(`${this._endPoint}`, {
       params
     });
   }
 
-  private queryParams(
-    filter: string,
-    startIndex: number,
-    maxResults: number
-  ): HttpParams {
+  private queryParams(filter: string, startIndex: number, maxResults: number): HttpParams {
     let params = new HttpParams();
     return params
       .set('q', filter)
