@@ -6,13 +6,10 @@
   </mat-card-title-group>
   <mat-divider></mat-divider>
   <mat-card-content> <p [innerHtml]="description"></p> </mat-card-content>
-  <mat-divider></mat-divider>
-  <mat-card-actions align="start">
-    <button mat-raised-button color="warn" *ngIf="inCollection" (click)="handleRemove()">
-      Remove Book from Collection
-    </button>
-    <button mat-raised-button color="primary" *ngIf="!inCollection" (click)="handleAdd()">
-      Add Book to Collection
-    </button>
-  </mat-card-actions>
+  <ng-container *ngIf="actionsTemplate">
+    <mat-divider></mat-divider>
+    <mat-card-actions align="start">
+      <ng-container *ngTemplateOutlet="actionsTemplate; context: actionContext"></ng-container>
+    </mat-card-actions>
+  </ng-container>
 </mat-card>

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, TemplateRef } from '@angular/core';
 
 import { BookDetail } from '@ws/models';
 
@@ -9,18 +9,9 @@ import { BookDetail } from '@ws/models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookDetailsComponent {
+  @Input() actionsTemplate: TemplateRef<any>;
   @Input() book: BookDetail;
   @Input() inCollection: boolean;
-  @Output() add = new EventEmitter<BookDetail>();
-  @Output() remove = new EventEmitter<string>();
-
-  handleAdd() {
-    this.add.emit(this.book);
-  }
-
-  handleRemove() {
-    this.remove.emit(this.id);
-  }
 
   /**
    * Tip: Utilize getters to keep templates clean
@@ -38,10 +29,17 @@ export class BookDetailsComponent {
   }
 
   get description() {
-    return this.book.volumeInfo.description;
+    return this.book.volumeInfo.description || '<i>No description available</i>';
   }
 
   get thumbnail() {
     return this.book.volumeInfo.imageLinks && this.book.volumeInfo.imageLinks.smallThumbnail;
+  }
+
+  get actionContext() {
+    return {
+      $implicit: this.book,
+      inCollection: this.inCollection
+    };
   }
 }
