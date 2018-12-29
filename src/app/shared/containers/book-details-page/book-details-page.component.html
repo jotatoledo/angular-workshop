@@ -1,6 +1,11 @@
 <ws-book-details
   [inCollection]="inCollection$ | async"
   [book]="book$ | async"
-  (add)="handleAdd($event)"
-  (remove)="handleRemove($event)"
+  [actionsTemplate]="bookActions"
 ></ws-book-details>
+<ng-template #bookActions let-book let-favorite="inCollection">
+  <button [@tdHeadshake]="favorite" mat-raised-button color="accent" (click)="toggleInCollectio(book, favorite)">
+    <mat-icon>{{ favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+    {{ favorite ? 'Remove Book from Collection' : 'Add Book to Collection' }}
+  </button>
+</ng-template>
