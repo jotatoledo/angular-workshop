@@ -14,4 +14,8 @@ export class BookPreviewListComponent {
   get empty(): boolean {
     return this.books.length === 0;
   }
+
+  trackBook(index: number, book: BookPresentation) {
+    return book.id;
+  }
 }
