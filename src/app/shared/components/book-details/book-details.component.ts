@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy, TemplateRef } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, TemplateRef, ViewEncapsulation } from '@angular/core';
 
 import { BookDetail } from '@ws/models';
 
@@ -6,7 +6,8 @@ import { BookDetail } from '@ws/models';
   selector: 'ws-book-details',
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class BookDetailsComponent {
   @Input() actionsTemplate: TemplateRef<any>;
